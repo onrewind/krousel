@@ -1,44 +1,32 @@
 {
   "name": "@onrewind/krousel",
   "version": "0.2.5",
-  "description": "Carousel library",
-  "source": "src/index.js",
-  "main": "dist/krousel.js",
-  "module": "dist/krousel.module.js",
-  "scripts": {
-    "build": "microbundle --name Krousel",
-    "watch": "microbundle watch --name Krousel",
-    "watch:examples": "parcel ./examples/index.html --out-dir public --open",
-    "build:examples": "parcel build ./examples/index.html --out-dir docs --public-url ./",
-    "serve:examples": "http-server docs -p 8082",
-    "prettier": "prettier --write src/*",
-    "publish": "clean-publish"
-  },
-  "targets": "> 0.25%, not dead",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/VincentCharpentier/krousel.git"
-  },
+  "description": "Javascript carousel library",
   "keywords": [
     "carousel",
     "slider",
     "javascript"
   ],
-  "author": "Vincent Charpentier",
-  "license": "MIT",
+  "homepage": "https://github.com/onrewind/krousel#readme",
   "bugs": {
-    "url": "https://github.com/VincentCharpentier/krousel/issues"
+    "url": "https://github.com/onrewind/krousel/issues"
   },
-  "homepage": "https://github.com/VincentCharpentier/krousel#readme",
-  "devDependencies": {
-    "clean-publish": "1.1.6",
-    "http-server": "0.12.1",
-    "husky": "4.2.3",
-    "lint-staged": "10.0.7",
-    "microbundle": "0.11.0",
-    "node-sass": "4.13.1",
-    "prettier": "1.19.1",
-    "sass": "1.26.3"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/onrewind/krousel.git"
+  },
+  "license": "MIT",
+  "author": "On Rewind",
+  "main": "dist/krousel.js",
+  "source": "src/index.js",
+  "scripts": {
+    "build": "microbundle --name Krousel --format cjs",
+    "build:examples": "parcel build ./examples/index.html --out-dir docs --public-url ./",
+    "publish": "clean-publish",
+    "serve:examples": "http-server docs",
+    "size": "size-limit",
+    "watch": "microbundle watch --name Krousel --format cjs",
+    "watch:examples": "parcel ./examples/index.html --out-dir public --open"
   },
   "husky": {
     "hooks": {
@@ -47,5 +35,28 @@
   },
   "lint-staged": {
     "src/**/*.js": "prettier --write"
-  }
+  },
+  "devDependencies": {
+    "@size-limit/file": "4.6.0",
+    "clean-publish": "1.1.6",
+    "http-server": "0.12.1",
+    "husky": "4.2.3",
+    "lint-staged": "10.0.7",
+    "microbundle": "0.12.4",
+    "node-sass": "4.13.1",
+    "prettier": "1.19.1",
+    "sass": "1.26.3",
+    "size-limit": "4.6.0",
+    "sort-package-json": "1.46.0"
+  },
+  "size-limit": [
+    {
+      "path": [
+        "dist/krousel.js",
+        "dist/krousel.css"
+      ],
+      "gzip": false,
+      "limit": "20KB"
+    }
+  ]
 }

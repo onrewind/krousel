@@ -1,7 +1,7 @@
 // CLEAN BEFORE PUBLISH
 module.exports = {
   // Fields in package.json to remove
-  fields: ['scripts', 'targets', 'devDependencies', 'husky', 'lint-staged'],
+  fields: ['scripts', 'devDependencies', 'husky', 'lint-staged', 'size-limit'],
   // Files to remove
   files: [
     '.idea',

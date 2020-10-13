@@ -1,5 +1,13 @@
+# misc
 .idea
+.DS_Store
+
+# parcel
 /public/
-/node_modules/
 /.cache/
+
+# dependencies
+/node_modules/
+
+# production
 /dist/**/*.map
