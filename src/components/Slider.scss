@@ -15,7 +15,8 @@
 .k-track {
   transition-timing-function: ease-in-out;
 
-  &:before, &:after {
+  &:before,
+  &:after {
     display: table;
     content: '';
     clear: both;
@@ -85,7 +86,6 @@
   }
 }
 
-
 .k-dots {
   text-align: center;
 }
@@ -97,7 +97,7 @@
   display: inline-block;
   height: $size;
   margin: $size / 2;
-  opacity: .2;
+  opacity: 0.2;
   transition: opacity 250ms ease;
   width: $size;
 
