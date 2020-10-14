@@ -36,9 +36,15 @@
     }
   },
   "lint-staged": {
+    "package.json": [
+      "sort-package-json",
+      "prettier --write"
+    ],
     "src/**/*.js": "prettier --write"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@onrewind/krousel-react": "0.2.0"
+  },
   "devDependencies": {
     "@size-limit/file": "4.6.0",
     "clean-publish": "1.1.6",
@@ -56,7 +62,10 @@
   "size-limit": [
     {
       "path": [
-        "dist"
+        "dist",
+        "LICENSE",
+        "package.json",
+        "README.md"
       ],
       "limit": "20KB"
     }
