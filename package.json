@@ -42,9 +42,7 @@
     ],
     "src/**/*.js": "prettier --write"
   },
-  "dependencies": {
-    "@onrewind/krousel-react": "0.2.0"
-  },
+  "dependencies": {},
   "devDependencies": {
     "@size-limit/file": "4.6.0",
     "clean-publish": "1.1.6",
