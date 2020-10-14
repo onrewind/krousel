@@ -18,14 +18,16 @@
   "license": "MIT",
   "author": "On Rewind",
   "main": "dist/krousel.js",
+  "umd:main": "dist/krousel.umd.js",
+  "module": "dist/krousel.module.js",
   "source": "src/index.js",
   "scripts": {
-    "build": "microbundle --name Krousel --format cjs",
+    "build": "del-cli 'dist/*' && microbundle --name Krousel --sourcemap false --format es,cjs,umd",
     "build:examples": "parcel build ./examples/index.html --out-dir docs --public-url ./",
     "publish": "clean-publish",
     "serve:examples": "http-server docs",
-    "size": "size-limit",
-    "watch": "microbundle watch --name Krousel --format cjs",
+    "size": "npm run build && size-limit",
+    "watch": "microbundle watch --name Krousel --format es,cjs,umd",
     "watch:examples": "parcel ./examples/index.html --out-dir public --open"
   },
   "husky": {
@@ -36,9 +38,11 @@
   "lint-staged": {
     "src/**/*.js": "prettier --write"
   },
+  "dependencies": {},
   "devDependencies": {
     "@size-limit/file": "4.6.0",
     "clean-publish": "1.1.6",
+    "del-cli": "3.0.1",
     "http-server": "0.12.1",
     "husky": "4.2.3",
     "lint-staged": "10.0.7",
@@ -52,10 +56,8 @@
   "size-limit": [
     {
       "path": [
-        "dist/krousel.js",
-        "dist/krousel.css"
+        "dist"
       ],
-      "gzip": false,
       "limit": "20KB"
     }
   ]
